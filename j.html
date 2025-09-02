@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Janani</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e6e6fa, #d8bfd8);
+      color: #4b0082;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* Special Heading */
+    .special-message {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin: 40px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Buttons */
+    .btn {
+      background-color: #9370db;
+      color: white;
+      font-size: 1.2rem;
+      padding: 12px 24px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #7a5dc7;
+    }
+
+    /* Hidden Sections */
+    .hidden {
+      display: none;
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1.2rem;
+      text-align: justify;
+      background: #fff;
+      color: #4b0082;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Flipcard Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .flip-card {
+      background: transparent;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .flip-card-back {
+      background: #9370db;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      font-size: 1.2rem;
+    }
+
+    /* List Style for Dates & Plans */
+    .dates-list {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .dates-list li {
+      background: #f8f4fc;
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      border-left: 6px solid #9370db;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="special-message">Happy Birthday Janani! 🎂💜</h1>
+
+  <!-- Celebrate Button -->
+  <button class="btn" onclick="showMessage()">🎉 Celebrate 🎉</button>
+
+  <!-- Hidden Message -->
+  <div id="birthdayMessage" class="hidden">
+    Wishing you a day filled with love, laughter, and endless happiness! 💜  
+    You have been such an amazing friend and I’m so glad to have you in my life.  
+    May this year bring you all the success, joy, and memories you deserve!  
+    Keep smiling, keep shining, because you truly are one of a kind! 🌸  
+  </div>
+
+  <!-- Flipcard Gallery -->
+  <div class="gallery">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="IMG-20250901-WA0052.jpg" alt="Memory 1">
+        </div>
+        <div class="flip-card-back">
+          Our first outing together! 🌍
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="IMG-20250901-WA0054.jpg" alt="Memory 2">
+        </div>
+        <div class="flip-card-back">
+          The funniest day ever! 😂
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="IMG-20250901-WA0053.jpg" alt="Memory 3">
+        </div>
+        <div class="flip-card-back">
+          A memory worth a lifetime! 💜
+        </div>
+      </div>
+    </div>
+    
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="IMG-20250901-WA0046.jpg" alt="Memory 4">
+        </div>
+        <div class="flip-card-back">
+          Photo on my birthday 💜
+        </div>
+      </div>
+    </div>
+    
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="IMG-20250901-WA0058.jpg" alt="Memory 5">
+        </div>
+        <div class="flip-card-back">
+          Another special photo 💜
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dates to Remember Button -->
+  <button class="btn" onclick="showDates()">📅 Dates to Remember</button>
+
+  <!-- Hidden Dates Section -->
+  <div id="datesSection" class="hidden">
+    <ul class="dates-list">
+      <li><b>26 Mar 2018:</b> The proposal day 😘</li>
+      <li><b>03 Mar 2022:</b> First hug 🫂</li>
+      <li><b>23 Apr 2022:</b> First liplock 🫦</li>
+      <li><b>14 May 2022:</b> A day never gone come 💜</li>
+      <li><b>06 Oct 2022:</b> The unforgettable naughty things 😂</li>
+    </ul>
+  </div>
+
+  <!-- Things to Do with You Button -->
+  <button class="btn" onclick="showPlans()">📝 Things to Do with You</button>
+
+  <!-- Hidden Things Section -->
+  <div id="plansSection" class="hidden">
+    <ul class="dates-list">
+      <li>🛍️ Shopping with you</li>
+      <li>🍲 Subbu Mess special day</li>
+      <li>🎬 Watching Vijay’s last movie together</li>
+      <li>🍽️ Dinner with our family</li>
+      <li>🌸 Dream life I planned with you</li>
+    </ul>
+  </div>
+
+  <script>
+    function showMessage() {
+      const msg = document.getElementById('birthdayMessage');
+      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showDates() {
+      const dates = document.getElementById('datesSection');
+      dates.style.display = dates.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showPlans() {
+      const plans = document.getElementById('plansSection');
+      plans.style.display = plans.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
